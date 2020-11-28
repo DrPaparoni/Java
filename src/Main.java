@@ -3,17 +3,30 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-       Scanner input = new Scanner(System.in);
-       boolean isOnRepeat = true;
-       while (isOnRepeat) {
-           System.out.println("Playing current song");
-           System.out.println("Would you like to take this song of of repeat? if so, answer yes");
-           String userInput = input.next();
+       String question = "Which anime is my favorite?";
+       String choiceOne = "dragon ball z";
+       String choiceTwo = "jojo";
+       String choiceThree = "one piece";
 
-           if(userInput.equals("yes")) {
-               isOnRepeat = false;
-           }
-       }
-       System.out.println("Playing next song");
+       String correctAnswer = choiceTwo;
+
+       // Print statement asking the question
+        System.out.println(question);
+        // Print statement giving the answer choices
+        System.out.println("Choose one of the following: " +
+                choiceOne + ", " + choiceTwo + ", or " + choiceThree + ".");
+
+        // Have the user input an answer
+        Scanner scanner = new Scanner(System.in);
+        // Retrieve the user's input
+        String input = scanner.next();
+
+        // If the user's input matches the correctAnswer...
+        // then the user is correct and we want to print a congrats message.
+        if(correctAnswer.equals(input.toLowerCase())){
+            System.out.println("Congrats! that's the correct answer");
+        } else {
+            System.out.println("You are incorrect. The correct answer is " + correctAnswer);
+        }
     }
 }
