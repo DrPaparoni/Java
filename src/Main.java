@@ -1,19 +1,21 @@
-import java.util.Scanner;
-
 public class Main {
-    public static double calculateTotalMealPrice(double listedMealPrice,
-                                               double tipRate,
-                                               double taxRate) {
-        double tip = tipRate * listedMealPrice;
-        double tax = taxRate * listedMealPrice;
-        double result = listedMealPrice + tip + tax;
-        return result;
-    }
-    public static void main(String[] args) {
-        double groupTotalMealPrice = calculateTotalMealPrice(100,.2,.08);
-        System.out.println(groupTotalMealPrice);
 
-        double individualMealPrice = groupTotalMealPrice / 5;
-        System.out.println(individualMealPrice);
+    public static double salaryCalculator(double hoursPerWeek, double amountPerHour, int vacationDays){
+        if(hoursPerWeek < 0) {
+            return -1;
+        }
+
+        if(amountPerHour < 0) {
+            return  -1;
+        }
+
+        double weeklyPaycheck = hoursPerWeek * amountPerHour;
+        double unpaidTime = vacationDays * amountPerHour * 8;
+        return (weeklyPaycheck * 52) - unpaidTime;
+    }
+
+    public static void main(String[] args) {
+        double salary = salaryCalculator(40, 15, 8);
+        System.out.println(salary);
     }
 }
