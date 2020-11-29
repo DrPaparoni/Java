@@ -1,21 +1,13 @@
 public class Main {
 
-    public static double salaryCalculator(double hoursPerWeek, double amountPerHour, int vacationDays){
-        if(hoursPerWeek < 0) {
-            return -1;
-        }
-
-        if(amountPerHour < 0) {
-            return  -1;
-        }
-
-        double weeklyPaycheck = hoursPerWeek * amountPerHour;
-        double unpaidTime = vacationDays * amountPerHour * 8;
-        return (weeklyPaycheck * 52) - unpaidTime;
-    }
-
     public static void main(String[] args) {
-        double salary = salaryCalculator(40, 15, 8);
-        System.out.println(salary);
+        Triangle triangleA = new Triangle(15,8,15,8,17);
+        Triangle triangleB = new Triangle(3,2.598,3,3,3);
+
+        double triangleAArea = triangleA.findArea();
+        System.out.println(triangleAArea);
+
+        double triangleBArea = triangleB.findArea();
+        System.out.println(triangleBArea);
     }
 }
